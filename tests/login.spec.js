@@ -15,7 +15,7 @@ test.describe('Sauce Demo authorisation', () => {
     await page.getByRole('textbox', { name: 'Username' }).fill('locked_out_user')
     await page.getByRole('textbox', { name: 'Password' }).fill('secret_sauce')
     await page.getByRole('button', { name: 'Login' }).click()
-    await expect(page.getByRole('heading', { name: 'Epic sadface: Sorry, this user has been locked out.' })).toBeVisible()
+    await expect(page.getByText('Epic sadface: Sorry, this user has been locked out.')).toBeVisible()
   })
   
 })
